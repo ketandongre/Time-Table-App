@@ -12,7 +12,7 @@ var infobar=document.querySelector('.infobar');
 var download=document.querySelector('.download');
 var closebtn=document.querySelector('.fa-plus');
 var form=document.querySelector('form');
-console.log(form);
+// console.log(form);
 closebtn.addEventListener('click',()=>{
     infobar.classList.add('hidden');
 })
@@ -56,15 +56,23 @@ cancelBtn.addEventListener('click',()=>{
 submit.onclick=(e)=>{
     e.preventDefault();
     Class.code=form.querySelector('#code').value;
-    Class.name=form.querySelector('#name').value;
-    Class.Ins=form.querySelector('#ins').value;
-    Class.ltp=form.querySelector('#ltp').value;
-    Class.day=form.querySelector('#day').value;
-    Class.slot=form.querySelector('#slot').value;
-    Class.CC=form.querySelector('#CC').value;
-    Class.notes=form.querySelector('#notes').value;
-    localStorage.setItem(`Class[${Class.day}][${Class.slot}]`,JSON.stringify(Class));
-    window.location.href='/';
+    // console.log(Class.code);
+    if(Class.code.length==0)
+    {
+        alert("Please Enter Course Code");
+    }
+    else
+    {
+        Class.name=form.querySelector('#name').value;
+       Class.Ins=form.querySelector('#ins').value;
+        Class.ltp=form.querySelector('#ltp').value;
+        Class.day=form.querySelector('#day').value;
+        Class.slot=form.querySelector('#slot').value;
+        Class.CC=form.querySelector('#CC').value;
+        Class.notes=form.querySelector('#notes').value;
+        localStorage.setItem(`Class[${Class.day}][${Class.slot}]`,JSON.stringify(Class));
+        window.location.reload();
+    }
     // console.log(Class);
 }
 // for(i=1;i<7;i++)
@@ -112,7 +120,7 @@ for(i=0;i<div1.length;i++)
         }
         div1[i].addEventListener('click',addinfo);
         function addinfo(){
-            console.log("in");
+            // console.log("in");
             infobar.classList.remove('hidden');
             bar.classList.add('hidden');
             infobar.querySelector('.course_code').textContent=`Courses Code: ${obj.code}`;
@@ -121,6 +129,8 @@ for(i=0;i<div1.length;i++)
             infobar.querySelector('.course_Coordinator').textContent=`Courses Coordinator: ${obj.CC}`;
             infobar.querySelector('.notes').textContent=`${obj.notes}`;
             infobar.querySelector('.editinfo').addEventListener('click',()=>{
+                // console.log('ketan');
+                // localStorage.removeItem(`Class[${obj.day}][${obj.slot}]`);
                 infobar.classList.add('hidden');
                 bar.classList.remove('hidden');
                 bar.querySelector('#ltp').value=obj.ltp;
@@ -129,14 +139,15 @@ for(i=0;i<div1.length;i++)
                 bar.querySelector('#ins').value=obj.Ins;
                 bar.querySelector('#CC').value=obj.CC;
                 bar.querySelector('#notes').value=obj.notes;
+                bar.querySelector('#day').value=obj.day;
                 bar.querySelector('#slot').value=obj.slot;
             })
-            console.log("here")
-            console.log(infobar.querySelector('.delete'));
+            // console.log("here")
+            // console.log(infobar.querySelector('.delete'));
             infobar.querySelector('.delete').onclick=func;
             // infobar.querySelector('.delete').addEventListener('click',func);
             function func(){
-                console.log("delete");
+                // console.log("delete");
                 localStorage.removeItem(`Class[${day}][${slot}]`);
                 window.location.href='/';
             }
