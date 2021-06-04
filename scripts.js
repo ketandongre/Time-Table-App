@@ -149,7 +149,7 @@ for(i=0;i<div1.length;i++)
             function func(){
                 // console.log("delete");
                 localStorage.removeItem(`Class[${day}][${slot}]`);
-                window.location.href='/';
+                window.location.reload();
             }
         }
         // const info=document.createElement('div');
