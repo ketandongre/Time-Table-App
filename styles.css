@@ -1,0 +1,314 @@
+*{
+    box-sizing: border-box !important;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --L:lightsteelblue;
+    --T:lightyellow;
+    --P:skyblue;
+}
+.l{
+    background: var(--L);
+}
+.t{
+    background: var(--T);
+}
+.p{
+    background: var(--P);
+}
+body{
+    overflow: hidden;
+    background-color: lightyellow;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+}
+.container{
+    flex:80;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: auto;
+    height: 90%;
+    margin: 10px;
+    border: 2px black;
+    box-shadow: 0px 20px 20px 15px rgba(0,0,0,0.3);
+    border-radius: 30px;
+}
+.infobar{
+    position: relative;
+    flex: 30;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #2196F3;
+    margin-left: 20px;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px 0 0 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.5em;
+}
+.infobar div{
+    padding: 3px;
+    margin: 5px;
+}
+.notes{
+    overflow:visible;
+    font-size: 0.6em;
+}
+.editinfo{
+    width: 80px;
+    margin-right: 5px;
+    background-color:rgba(50,50,256,0.35);
+    padding: 3px 10px;
+    height: 30px;
+    cursor: pointer;
+    border: 0;
+}
+.delete{
+    border: 0;
+    margin: 10px;
+    width: 80px;
+    padding: 3px 10px;
+    height: 30px;
+    background-color:rgba(50,50,256,0.35);
+    cursor: pointer;
+}
+.editbar{
+    position: relative;
+    flex: 30;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #2196F3;
+    margin-left: 20px;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px 0 0 10px;
+}
+form{
+    width: 100%;
+}
+.addItem{
+    transform: translateY(30px);
+    position: relative;
+    top: -40px;
+    flex: 90;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 100;
+    height: 300px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2em;
+    width: 300px;
+}
+.addItem button{
+    background-color:rgba(50,50,256,0.5);
+    position: relative;
+    top: 30px;
+    font-family: cursive;
+    border: 0;
+    height: 40px;
+    width: 80px;
+}
+.addItem select{
+    margin: 8px;
+    border-radius: 7px;
+    height: auto;
+    padding: 10px;
+    border: 0;
+    background: skyblue;    
+    min-width: 75%;
+    text-align-last:center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.addItem option{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.addItem input{
+    margin: 8px;
+    border-radius: 7px;
+    text-align: center;
+    height: 30px;
+    padding: 5px;
+    min-width: 75%;
+    border: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: skyblue;
+}
+.addItem textarea{
+    margin: 8px;
+    min-width: 75%;
+    min-height: 30px;
+    background: skyblue;
+    padding: 5px;
+    border-radius: 7px;
+    border: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.heading{
+    position: relative;
+    display: flex;
+    flex:20;
+    background-image: linear-gradient(rgba(255, 255, 0, 0.507),white);
+    border-radius: 30px 30px 0 0;
+    width: 100%;
+}
+.heading span{
+    flex:100;
+    transform: translateX(10px);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgba(0,0,0,0.7);
+    font-size: 4em;
+}
+.download{
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    height: auto;
+    width: auto;
+    padding: 3px 10px;
+}
+.edit{
+    position: absolute;
+    bottom: 10px;
+    right:70px;
+    padding: 3px 10px;
+}
+.toggle{
+    flex: 3.5;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    min-height: 25px;
+    min-width: 50px;
+    padding: 0;
+    background:lightyellow;
+    margin: 10px 20px auto;
+    border-radius: 34px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.slider{
+    background: rgb(252, 252, 170);
+    border: 1px solid black;
+    height: 20px;
+    width: 20px;
+    transition: transform 0.2s ease-out;
+}
+.slider.dark{
+    transform: translateX(27.5px);
+}
+.round{
+    border-radius: 50%;
+}
+.tt_container{
+    flex: 90;
+    display: flex;
+    background-color: rgba(250,240,140);
+    padding: 10px;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+}
+.timeslots{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: lightgoldenrodyellow;
+    font-size: 0.8em;
+}
+.empty{
+    border: 1px solid;
+    border-bottom: 0;
+    border-right: 0;
+    flex: 2;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+.ts{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    border: 1px solid;
+    border-bottom: 0;
+    border-right: 0;
+    justify-content: center;
+    align-items: center;
+}
+.ts:nth-child(11){
+    border-bottom: 1px solid;
+}
+.M,.T,.W,.Th,.F,.S,.Sn{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    background: lightgreen;
+}
+.M,.T,.W,.Th,.F,.S,.Sn:nth-child(10){
+    border-bottom: 1px solid;
+}
+.S{
+    border-right: 1px solid;
+}
+.day{
+    flex:2;
+    display: flex;
+    width: 100%;
+    background-image: radial-gradient(white,rgb(253, 253, 181));
+    justify-content: center;
+    align-items: center;
+    background-color: #abdefa;
+    border: 1px solid;
+    border-bottom: 0;
+    border-right: 0;
+}
+.slot{
+    flex: 1;
+    /* background-color:lightsteelblue; */
+    /* border: 1px solid; */
+    position: relative;
+    display: flex;
+    border: 1px solid;
+    border-bottom: 0;
+    border-right: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.hidden{
+    display: none;
+}
+.fa-plus{
+    transform: rotate(45deg);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+@media print {
+    body,*{
+      visibility: hidden;
+    }
+    #content * {
+      visibility: visible;
+    }
+  }
